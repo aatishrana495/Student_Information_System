@@ -1,0 +1,90 @@
+
+	
+#image1{
+	position:absolute;
+	height:125px;
+	top:0;
+	left:0;
+}
+
+
+.login-box{
+	width : 360px;
+	height : 400px;
+	background : rgba(0,0,0,0.7);
+	top : 250px;
+	left : 550px;
+	position : absolute;
+	color : black;
+}
+.login-pic{
+    width : 100px;
+	position : absolute;
+	top:-50px;
+	left: calc(50% - 50px);
+}
+#h1{
+	position : absolute;
+    left :20%;
+	top : 10% ;
+	color : white;
+}
+#username2{
+	border-radius:4px;
+	position: absolute;
+	top : 38%;
+	margin-left:30px;
+	height:40px;
+	padding:3px;
+	width:300px;
+	font-size:15px;
+	font-family:sans-serif;
+}
+#username1{
+	position:absolute;
+	top:27% ;
+	color : white;
+    margin-left : 30px;
+	font-size:18px;
+	font-family:sans-serif;
+	
+}
+#password1{
+	position: absolute;
+	top: 48%;
+	color : white;
+    margin-left : 30px;
+	font-size:18px;
+	font-family:sans-serif;
+
+
+}
+#password2{
+	position: absolute;
+	top: 58%;
+	width:300px;
+	margin-left:30px;
+	border-radius:4px;
+	height:40px;
+	font-size:15px;
+	font-family:sans-serif;
+	padding:3px;
+}
+
+#login{
+	background-color:rgba(0,0,0,0.2);
+	border-radius:3px;
+	width:75px;
+	height:30px;
+	padding:6px;
+	font-size:25px;
+	font-family:sans-serif;
+	color:rgb(255,255,255);
+	position:absolute;
+	margin-left:30px;
+	margin-top:300px;
+}
+#login:hover{
+	background-color:	#fff;
+	color: #000000;
+}
