@@ -1,0 +1,82 @@
+.info{
+	position : absolute;
+	font-family : sans-serif;
+	
+}
+
+#h1{
+	position :relative;
+	top:180px;
+	left :200px;
+	
+}
+
+.course_overview{
+	position: relative;
+	
+}
+
+.Posts{
+	position: relative;
+	
+}
+.p_post{
+	position: relative;
+	
+}
+#h3 {
+	position :relative;
+	top:160px;
+	left :210px;
+	
+}
+#h5 {
+	position :relative;
+	top:180px;
+	left :210px;
+	
+}
+
+#p_post{
+	position:relative;
+	top:140px;
+	left:220px;
+	width:500px;
+	font-size:13;
+}
+#p_syl{
+	position:relative;
+	top:140px;
+	left:220px;
+	width:1000px;
+}
+
+#button_delete{
+	position:relative;
+	background-color:red;
+	top:110px;
+	color:white;
+	left:800px;
+}
+
+#button_edit{
+	position:relative;
+	background-color:blue;
+	top:110px;
+	left:800px;
+	color:white;
+}
+
+#button_add{
+	position:relative;
+	color:white;
+	background-color:green;
+	top:140px;
+	left:800px;
+}
+
+#p_comment{
+	position:relative;
+	top:180px;
+	left:520px;
+}
