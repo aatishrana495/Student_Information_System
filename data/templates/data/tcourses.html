@@ -1,0 +1,25 @@
+{% extends "data/home_t.html" %}
+        
+{% block content %}
+    <div >
+        <h1  >Courses Information</h1>
+        <table >
+            <tr>
+                <th >Course Number</th>
+                <th >Course Name</th>
+                <th >Course Section</th>
+                <th >Location</th>
+            </tr>
+            {% for sub in subs %}
+                    <tr>
+                        <th ><a href ="{% url 'blog' id=sub.pk %}">{{ sub.course.id }}</a></th>
+                        <th >{{ sub.course.name }}</a></th>
+                        <th >{{ sub.section.id }}</a></th>
+                        <th >{{ sub.section.location }}</a></th>
+                    </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+
+{% endblock %}

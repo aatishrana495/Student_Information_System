@@ -1,0 +1,55 @@
+{% extends "data/home_s.html" %}
+        
+{% block content %}
+    <div >
+        <h1 >Registeration Information</h1>
+        <table >
+            <tr>
+                <th >Roll Number is  :</th>
+                <th>{{ so.id }}</th>
+            </tr>
+            
+            <tr>
+                <th >Name  :</th>
+                <th>{{ so.name }}</th>
+            </tr>
+            
+            <tr>
+                <th>DOB  :</th>
+                <th>{{ so.dob }}</th>
+            </tr>
+            
+            <tr>
+                <th >Sex  :</th>
+                <th>{{ so.sex }}</th>
+            </tr>
+            
+            <tr>
+                <th >Contact  :</th>
+                <th>{{ so.contact }}</th>
+            </tr>
+            
+            <tr>
+                <th >Hostel  :</th>
+                <th>{{ so.hostel }}</th>
+            </tr>
+            
+            <tr>
+                <th >Department  :</th>
+                <th>{{ so.dept.name }}</th>
+            </tr>
+            
+            <tr>
+                <th >Programme  :</th>
+                <th>{{ so.programme }}</th>
+            </tr>
+
+            <tr>
+                <th >Dept contact  :</th>
+                <th>{{ so.dept.contact }}</th>
+            </tr>
+
+        </table>
+    </div>
+
+{% endblock %}

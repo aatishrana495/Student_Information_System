@@ -1,0 +1,51 @@
+{% extends "data/home_t.html" %}
+        
+{% block content %}
+    <div >
+        <h1 >Registeration Information</h1>
+        <table >
+            <tr>
+                <th >Roll Number  :</th>
+                <th>{{ to.id }}</th>
+            </tr>
+            
+            <tr>
+                <th >Name  :</th>
+                <th>{{ to.name }}</th>
+            </tr>
+            
+            <tr>
+                <th>DOB  :</th>
+                <th>{{ to.dob }}</th>
+            </tr>
+            
+            <tr>
+                <th >Sex  :</th>
+                <th>{{ to.sex }}</th>
+            </tr>
+            
+            <tr>
+                <th >Contact  :</th>
+                <th>{{ to.contact }}</th>
+            </tr>
+            
+            
+            <tr>
+                <th >Department  :</th>
+                <th>{{ to.dept.name }}</th>
+            </tr>
+            
+            <tr>
+                <th >Address  :</th>
+                <th>{{ to.address }}</th>
+            </tr>
+
+            <tr>
+                <th >Dept contact  :</th>
+                <th>{{ to.dept.contact }}</th>
+            </tr>
+
+        </table>
+    </div>
+
+{% endblock %}

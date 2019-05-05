@@ -1,0 +1,76 @@
+<html>
+ <head>
+  
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Registeration Info </title>
+</head>
+
+<body>
+    <a href="{% url 'index' %}" >HOME</a>
+    <div >
+        <div >
+            <h1  >Course Overview</h1>
+            
+            <h3 > Course Details </h3>
+                <p >Subject{L/T/P} : {{ cso.course.name }}  ({{ cso.course.ltp }})</p>
+                <p >Course Id: {{ cso.course.id }}</p>
+                <p >Section: {{ cso.section.id }}</p>
+                <p >Credits: {{ cso.course.credits }}</p>
+                <p >Coordinator: {{ cso.teacher }}</p>
+                <p >Strength: {{ cso.students.count }}</p>
+        </div>  
+        
+        <div >
+            <h3 >Syllabus</h3>
+                <p >{{ cso.course.syllabus }}</p>
+        </div>  
+        <h1 >Posts</h1>
+        {% if user.is_teacher %}
+                        <a href="{% url 'post_new' id=cso.pk %}" >Add Post</a>
+        {% endif %}
+        <div >
+            {% for post in cso.post_set.all %}
+                <div >
+                    {{ post.created_date }}
+                </div>
+                <h3 >{{ post.title }}<h3>
+                <div >
+                    {% if user.is_teacher %}
+                        <a href="{% url 'post_edit' id=post.pk num=cso.pk %}" >Edit Post</a>
+                        <a href="{% url 'post_delete' id=post.pk num=cso.pk %}" >Delete Post</a>
+                    {% endif %}
+                </div>
+                <p >{{ post.text|urlize|linebreaksbr }}</p>
+                <p ><a href="{% url 'add_comment' id=post.pk num=cso.pk %}">Add comment</a></p>
+                <hr>
+                {% for comment in post.comment_set.all %}
+                    
+                        <div >
+                            <div >{{ comment.created_date }}</div>
+                            {% if comment.author.is_student %}
+                                <strong>{{ comment.author.student.name }}</strong>
+                            {% else %}
+                                <strong>{{ comment.author.teacher.name }}</strong>
+                            {% endif %}
+                            {% ifequal request.user comment.author %}
+                                <a href="{% url 'delete_comment' id=comment.pk num=cso.pk %}">Delete comment</a>
+                            {% endifequal %}
+                            <p>{{ comment.text|urlize }}</p>
+                        </div>
+                    
+                {% empty %}
+                        <p>No comments here yet :(</p>
+                {% endfor %}
+                <hr>
+            {% empty %}
+                <p>No posts here yet :(</p>
+            {% endfor %}
+            
+            
+        </div>
+                    
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+ <head>
+  <link rel="stylesheet" href = "{% static 'css/base.css' %}">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Registeration Info </title>
+</head>
+
+<body>
+	<div class ="logo">
+		<img src = "{% static 'images/logo.png' %}" class = "logo1">
+	</div>
+	<div class = "box">
+		<h3 id = "box1" ><a href = "" > Registeration Info </a></h3>
+		<h3 id = "box1" ><a href = "" > Course Info </a></h3>
+		<h3 id = "box1" ><a href = ""> Marks Info</a></h3>
+		<h3 id = "box1" ><a href = ""> Attendance</a></h3>
+	</div>
+	<a href="{% url 'logout' %}">Log out</a>
+	{% block content %}
+    {% endblock %}
+</body>
+</html>
