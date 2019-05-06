@@ -1,0 +1,21 @@
+{% extends "data/home_t.html" %}
+        
+{% block content %}
+    <div >
+        <h1  >Attendance</h1>
+        <table >
+            <tr>
+                <th >Student</th>
+                <th >Status</th>
+            </tr>
+            {% for a in ao %}
+                    <tr>
+                        <th >{{ a.coursesectionstudent.student.name }}</a></th>
+                        <th >{{ a.status }}</a></th>
+                    </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+
+{% endblock %}

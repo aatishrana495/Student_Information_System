@@ -1,0 +1,46 @@
+{% extends 'data/home_t.html' %}
+
+
+{% block content %}
+{% if csso %}
+
+<form action="{% url 'submit_end_marks' id=id %}" method="post">
+            {% csrf_token %}
+    <div >
+        
+        <div >
+          <div >
+            <table >
+              <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Mid Marks</th>
+                    <th>End Marks</th>
+                    <th>Ta Marks</th>
+                </tr>
+              </thead>
+                <tbody>
+                {% for css in csso %}
+                    <tr>
+                    <td>{{ css.student.name }}</td>
+                    <td>
+                        <input type="number" name="{{ css.student.id }}" min="0" max="50" value="{{ css.end_marks }}">
+                    </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <input  type="submit" value="Submit">
+</form>
+
+
+{% else %}
+    <p>No students in Class</p>
+{% endif %}
+
+{% endblock %}

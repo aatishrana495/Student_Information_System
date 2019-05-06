@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
   <head>
 
     <meta charset="utf-8">
@@ -8,19 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
     <title>Login</title>
   </head>
 
   <body >
-
+    <img src = "{% static 'images/logo.png' %}" id = "logo1">
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
 
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-        <table>
+    <div class = "login">
+        <table id ="table">
         <tr>
             <td>{{ form.username.label_tag }}</td>
             <td>{{ form.username }}</td>
@@ -31,8 +32,9 @@
         </tr>
         </table>
 
-        <input type="submit" value="login" />
+        <input type="submit" value="login" id = "submit" />
         <input type="hidden" name="next" value="{{ next }}" />
+    </div>
     </form>
 
     

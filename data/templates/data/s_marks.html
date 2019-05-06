@@ -1,0 +1,29 @@
+{% extends "data/home_s.html" %}
+        
+{% block content %}
+    <div >
+        <h1  >Marks</h1>
+        <table >
+            <tr>
+                <th >Course Number</th>
+                <th >Course Name</th>
+                <th >Course Section</th>
+                <th >Mid Marks</th>
+                <th >End Marks</th>
+                <th >Ta Marks</th>
+            </tr>
+            {% for css in csso %}
+                    <tr>
+                        <th >{{ css.coursesection.course.id }}</th>
+                        <th >{{ css.coursesection.course.name }}</th>
+                        <th >{{ css.coursesection.section.id }}</th>
+                        <th >{{ css.mid_marks }}</th>
+                        <th >{{ css.end_marks }}</th>
+                        <th >{{ css.ta_marks }}</th>
+                    </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+
+{% endblock %}

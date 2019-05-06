@@ -1,0 +1,25 @@
+{% extends "data/home_s.html" %}
+        
+{% block content %}
+    <div >
+        <h1  >Attendance</h1>
+        <h2 >{{ cso.course.id }}  {{ cso.course.name }}  {{ cso.section.id }}</h2>
+        <p>total classes: {{ total }}</p>
+        <p>classes attended: {{ attended }}</p>
+        <table >
+            <tr>
+                <th >Date</th>
+                <th >Status</th>
+            </tr>
+            {% for a in ao %}
+                    <tr>
+                        <th >{{ a.date }}</th>
+                        <th >{{ a.status }}</th>
+                    </tr>
+            {% endfor %}
+            
+        </table>
+        <a href ="{% url 's_attendance' id=user.student.id  %}">BACK</a>
+    </div>
+
+{% endblock %}

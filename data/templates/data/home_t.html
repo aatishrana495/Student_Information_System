@@ -1,3 +1,4 @@
+{% load static %}
 <html>
  <head>
  <meta charset="utf-8">
@@ -6,14 +7,17 @@
 </head>
 
 <body>
-	
-	<div >
-		<h3  ><a href = "{% url 'teacher' id=user.teacher.id %}" > Registeration Info </a></h3>
-		<h3 ><a href = "{% url 'tcourses' id=user.teacher.id %}" > Course Info </a></h3>
-		<h3 ><a href = ""> Marks Info</a></h3>
-		<h3  ><a href = "{% url 't_attendance' id=user.teacher.id %}"> Attendance</a></h3>
+	<div class ="logo">
+		<img src = "{% static 'images/logo.png' %}" class = "logo1">
 	</div>
-	<a href="{% url 'logout' %}">Log out</a>
+	<div class ="box" >
+		<h3 id="box1" ><a href = "{% url 'teacher' id=user.teacher.id %}" > Registeration Info </a></h3>
+		<h3 id="box1" ><a href = "{% url 'tcourses' id=user.teacher.id %}" > Course Info </a></h3>
+		<h3 id="box1" ><a href = "{% url 't_marks' id=user.teacher.id %}"> Marks Info</a></h3>
+		<h3 id="box1" ><a href = "{% url 't_attendance' id=user.teacher.id %}"> Attendance</a></h3>
+	</div>
+	<h3 id = "box2"><a href="{% url 'logout' %}">Log out</a></h3>
+	
 	{% block content %}
     {% endblock %}
 </body>

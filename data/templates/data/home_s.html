@@ -1,19 +1,32 @@
+
 <html>
  <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        	
+ 	{% block extrahead %}{% endblock %}
   <title> Registeration Info </title>
+
+  
+  
+  
+
 </head>
 
 <body>
+
+	<img src = "{% static 'images/logo.png' %}" id = "logo1">
+	<ul id ="box">
+		<li id = "box1"><a href = "{% url 'student' id=user.student.id %}" > Registeration Info </a></li>
+		<li id = "box1"><a href = "{% url 'scourses' id=user.student.id %}" > Course Info </a></li>
+		<li id = "box1"><a href = "{% url 's_marks' id=user.student.id %}"> Marks Info</a></li>
+		<li id = "box1"><a href = "{% url 's_attendance' id=user.student.id %}"> Attendance</a></li>
+		<li id = "box1"><a href="{% url 'logout' %}">Log out</a></li>
+	</ul>
 	
-	<div >
-		<h3  ><a href = "{% url 'student' id=user.student.id %}" > Registeration Info </a></h3>
-		<h3 ><a href = "{% url 'scourses' id=user.student.id %}" > Course Info </a></h3>
-		<h3 ><a href = ""> Marks Info</a></h3>
-		<h3  ><a href = ""> Attendance</a></h3>
-	</div>
-	<a href="{% url 'logout' %}">Log out</a>
 	{% block content %}
     {% endblock %}
 </body>

@@ -1,8 +1,9 @@
 <html>
  <head>
-  
+  {% load static %}
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static '/css/blog.css' %}">
   <title> Registeration Info </title>
 </head>
 
@@ -30,6 +31,7 @@
                         <a href="{% url 'post_new' id=cso.pk %}" >Add Post</a>
         {% endif %}
         <div >
+            <h4>New Post</h4>
             {% for post in cso.post_set.all %}
                 <div >
                     {{ post.created_date }}
@@ -46,8 +48,9 @@
                 <hr>
                 {% for comment in post.comment_set.all %}
                     
-                        <div >
-                            <div >{{ comment.created_date }}</div>
+                        <div id = "comment" >
+                            <p>Comments</p>
+                            <div id = "com_date">{{ comment.created_date }}</div>
                             {% if comment.author.is_student %}
                                 <strong>{{ comment.author.student.name }}</strong>
                             {% else %}

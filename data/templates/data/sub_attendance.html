@@ -1,0 +1,26 @@
+{% extends "data/home_t.html" %}
+        
+{% block content %}
+    <div >
+        <h1  >Attendance</h1>
+        <h2 >{{ cso.course.id }}  {{ cso.course.name }}  {{ cso.section.id }}</h2>
+        <a href ="{% url 'add_date' id=id %}">ADD DATE</a>
+        <table >
+            <tr>
+                <th >Date</th>
+            </tr>
+            {% for dd in ddl %}
+                    <tr>
+                        <th >{{ dd.date }}</th>
+                        <th ><a href ="{% url 'all_students' id=id date=dd.date %}">edit attendance</a></th>
+                    
+                    </tr>
+            {% empty %}
+                <p>No classes taken yet</p>
+            {% endfor %}
+            
+        </table>
+        <a href ="{% url 't_attendance' id=user.teacher.id %}">Back to courses</a>
+    </div>
+
+{% endblock %}

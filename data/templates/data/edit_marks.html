@@ -1,0 +1,68 @@
+{% extends 'data/home_t.html' %}
+
+
+{% block content %}
+{% if csso %}
+
+<form action="{% url 'submit_marks' id=id num=num %}" method="post">
+            {% csrf_token %}
+    <div >
+        
+        <div >
+          <div >
+            <table >
+              <thead>
+                <tr>
+                    <th>Student Name</th>
+                    {% ifequal num 1 %}
+                        <th>Mid Marks</th>
+                    {% endifequal %}
+                    {% ifequal num 2 %}
+                        <th>END Marks</th>
+                    {% endifequal %}
+                    {% ifequal num 3 %}
+                        <th>TA Marks</th>
+                    {% endifequal %}
+                    
+                </tr>
+              </thead>
+                <tbody>
+                {% for css in csso %}
+                    <tr>
+                    <td>{{ css.student.name }}</td>
+                    {% ifequal num 1 %}
+                        <td>
+                        <input type="number" name="{{ css.student.id }}" min="0" max="30" value="{{ css.mid_marks }}">
+                    </td>
+                    {% endifequal %}
+
+                    {% ifequal num 2 %}
+                        <td>
+                        <input type="number" name="{{ css.student.id }}" min="0" max="50" value="{{ css.end_marks }}">
+                    </td>
+                    {% endifequal %}
+
+                    {% ifequal num 3 %}
+                        <td>
+                        <input type="number" name="{{ css.student.id }}" min="0" max="20" value="{{ css.ta_marks }}">
+                    </td>
+                    {% endifequal %}
+                    
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <input  type="submit" value="Submit">
+</form>
+
+
+{% else %}
+    <p>No students in Class</p>
+{% endif %}
+
+{% endblock %}

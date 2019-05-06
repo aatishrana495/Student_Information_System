@@ -1,0 +1,23 @@
+{% extends "data/home_t.html" %}
+        
+{% block content %}
+    <div >
+        <h1  >Attendance</h1>
+        <table >
+            <tr>
+                <th >Student</th>
+                <th >Status</th>
+            </tr>
+            {% for a in ao %}
+                    <tr>
+                        <th >{{ a.coursesectionstudent.student.name }}</th>
+                        <th >{{ a.status }}</th>
+                         <th ><a href ="{% url 'change_attendance' id=a.pk %}">Change</a></th>
+                    </tr>
+            {% endfor %}
+            
+        </table>
+        <a href ="{% url 'sub_attendance' id=id %}">SAVE</a>
+    </div>
+
+{% endblock %}

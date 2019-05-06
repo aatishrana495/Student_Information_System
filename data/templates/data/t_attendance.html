@@ -2,13 +2,14 @@
         
 {% block content %}
     <div >
-        <h1  >Courses Information</h1>
+        <h1  >Attendance</h1>
         <table >
             <tr>
                 <th >Course Number</th>
                 <th >Course Name</th>
                 <th >Course Section</th>
                 <th >Location</th>
+                <th >Strength</th>
             </tr>
             {% for sub in subs %}
                     <tr>
@@ -16,7 +17,10 @@
                         <th >{{ sub.course.name }}</a></th>
                         <th >{{ sub.section.id }}</a></th>
                         <th >{{ sub.section.location }}</a></th>
+                        <th >{{ sub.students.count }}</th>
                     </tr>
+            {% empty %}
+                <p>No courses taught yet :(</p>
             {% endfor %}
             
         </table>

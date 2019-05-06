@@ -1,21 +1,29 @@
+
+
 {% extends "data/home_s.html" %}
-        
+{% load static %}
+         {% block extrahead %}
+         {% endblock %}
 {% block content %}
     <div >
         <h1  >Courses Information</h1>
         <table >
             <tr>
-                <th >Course Number</th>
-                <th >Course Name</th>
-                <th >Course Section</th>
-                <th >Location</th>
+                <th >Course Number  </th>
+                <th >Course Name   </th>
+                <th >Course Section   </th>
+                <th >Location  </th>
+                <th >Instructor  </th>
+                <th >class strength  </th>
             </tr>
             {% for sub in subs %}
                     <tr>
                         <th ><a href ="{% url 'blog' id=sub.pk %}">{{ sub.course.id }}</a></th>
-                        <th >{{ sub.course.name }}</a></th>
-                        <th >{{ sub.section.id }}</a></th>
-                        <th >{{ sub.section.location }}</a></th>
+                        <th >  {{ sub.course.name }} </a></th>
+                        <th >  {{ sub.section.id }}  </a></th>
+                        <th >  {{ sub.section.location }}  </a></th>
+                        <th >  {{ sub.teacher.name }}  </a></th>
+                        <th >  {{ sub.students.count }}  </a></th>
                     </tr>
             {% endfor %}
             

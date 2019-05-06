@@ -1,8 +1,8 @@
-{% extends "data/home_t.html" %}
+{% extends "data/home_s.html" %}
         
 {% block content %}
     <div >
-        <h1  >Courses Information</h1>
+        <h1  >Attendance</h1>
         <table >
             <tr>
                 <th >Course Number</th>
@@ -13,7 +13,7 @@
             </tr>
             {% for sub in subs %}
                     <tr>
-                        <th ><a href ="{% url 'blog' id=sub.pk %}">{{ sub.course.id }}</a></th>
+                        <th ><a href ="{% url 'all_dates' id=sub.pk %}">{{ sub.course.id }}</a></th>
                         <th >{{ sub.course.name }}</th>
                         <th >{{ sub.section.id }}</th>
                         <th >{{ sub.section.location }}</th>

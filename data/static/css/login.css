@@ -1,0 +1,21 @@
+
+#logo1{
+	height: 125px;
+	width : 99%;
+	position : relative;
+	top:1px;
+	left:1px;
+}
+#table {
+	position:absolute;
+	top:260px;
+	left:460px;
+	color:black;
+}
+
+#submit{
+	position:absolute;
+	top:320px;
+	left:660px;
+}
+

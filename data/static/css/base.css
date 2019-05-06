@@ -1,26 +1,47 @@
-.logo{
-	position : absolute;
-	top:10px;
-	left:10px;
-}
 
-.logo1{
+#logo1{
+	height: 125px;
 	width : 99%;
 	position : relative;
 	top:1px;
 	left:1px;
 }
 
-.box{
-	position:absolute;
-	top : 180px;
-	left:10px;
-}
+
 a{
-	color :white;
+	color :grey;
+}
+
+#box{
+	list-style-type: none;
+	padding:0;
+	overflow: hidden;
+	position:absolute;
+
+	width:99%;
+	
+	top:130px;
+	border-radius: 5px;
+	background-color:rgb(0,0,0);
+
+
 }
 #box1{
-	background-color:black;
-	padding: 10px;
-	border-radius:6px;
+	float:left;
 }
+
+#box1 a {
+	display: block;
+	border-right:3px solid rgb(255,255,255);
+	color:white;
+	text-align: center;
+	padding: 8px 14px;
+	text-shadow: 1px 1px 1px grey;
+	font-family: sans-seriff;
+}
+
+#box1:last-child{
+	border-left: 3px solid rgb(255,255,255);
+	float:right;
+}
+

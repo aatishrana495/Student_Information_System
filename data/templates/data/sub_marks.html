@@ -1,0 +1,44 @@
+{% extends 'data/home_t.html' %}
+
+{% block content %}
+{% if csso %}
+
+<a href="{% url 'edit_marks' id=id num=1 %}">EDIT MID MARKS</a>
+<a href="{% url 'edit_marks' id=id num=2 %}">EDIT END MARKS</a>
+<a href="{% url 'edit_marks' id=id num=3 %}">EDIT TA MARKS</a>
+
+    <div >
+         <div >
+          <div >
+            <table >
+              <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Mid Marks</th>
+                    <th>End Marks</th>
+                    <th>Ta Marks</th>
+                </tr>
+              </thead>
+                <tbody>
+                {% for css in csso %}
+                    <tr>
+                    <td>{{ css.student.name }}</td>
+                    <td>{{ css.mid_marks }}</td>
+                    <td>{{ css.end_marks }}</td>
+                    <td>{{ css.ta_marks }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+{% else %}
+    <p>No students in Class</p>
+{% endif %}
+
+<a href="{% url 't_marks' id=user.teacher.id %}">Go back</a>
+
+
+{% endblock %}
