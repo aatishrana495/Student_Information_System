@@ -2,55 +2,55 @@
 {% extends "data/home_s.html" %}
 {% load static %}
      {% block extrahead %}
-        <link rel="stylesheet" href="{% static '/css/base.css' %}">
         <link rel="stylesheet" href="{% static '/css/registration.css' %}">
+        
      {% endblock %}   
 {% block content %}
-    <div class = "info">
+    <div id = "info">
         <h1 id ="h1" >Registeration Information</h1>
-        <table id = "info_tab"> 
+        <table > 
             <tr >
-                <th id = "info_h" >Roll Number is  :</th>
+                <th id = "inf_h" >Roll Number is  :</th>
                 <th>{{ so.id }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h" >Name  :</th>
+                <th id = "inf_h" >Name  :</th>
                 <th>{{ so.name }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h">DOB  :</th>
+                <th id = "inf_h">DOB  :</th>
                 <th>{{ so.dob }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h" >Sex  :</th>
+                <th id = "inf_h" >Sex  :</th>
                 <th>{{ so.sex }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h" >Contact  :</th>
+                <th id = "inf_h" >Contact  :</th>
                 <th>{{ so.contact }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h">Hostel  :</th>
+                <th id = "inf_h">Hostel  :</th>
                 <th>{{ so.hostel }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h">Department  :</th>
+                <th id = "inf_h">Department  :</th>
                 <th>{{ so.dept.name }}</th>
             </tr>
             
             <tr>
-                <th id = "info_h">Programme  :</th>
+                <th id = "inf_h">Programme  :</th>
                 <th>{{ so.programme }}</th>
             </tr>
 
             <tr>
-                <th id = "info_h" >Dept contact  :</th>
+                <th id = "inf_h" >Dept contact  :</th>
                 <th>{{ so.dept.contact }}</th>
             </tr>
 

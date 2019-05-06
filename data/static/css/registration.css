@@ -1,7 +1,8 @@
 
-.info{
-	position : absolute;
+#info{
+	position : relative;
 	font-family : sans-serif;
+	
 	
 }
 
@@ -16,13 +17,9 @@ th{
 	padding:10px;
 }
 
-#info_tab{
-	position: relative;
-	top: 120px;
-	left: 220px;
-}
-
-#info_h{
+#inf_h{
+	position:relative;
+	top:50px;
 	color : #006400;
 	text-align: left;
 	

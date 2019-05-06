@@ -1,7 +1,10 @@
 {% extends "data/home_s.html" %}
-        
+	{% load static %}
+        {% block extrahead %}
+			<link rel="stylesheet" href="{% static '/css/marks.css' %}">
+		{% endblock %}
 {% block content %}
-    <div >
+    <div class = "marks">
         <h1  >Marks</h1>
         <table >
             <tr>

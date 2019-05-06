@@ -20,22 +20,21 @@
 
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    <div class = "login">
-        <table id ="table">
+ 		
+        <table >
         <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
+            <td >{{ form.username.label_tag }}</td>
+            <td  >{{ form.username }}</td>
         </tr>
         <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
+            <td >{{ form.password.label_tag }}</td>
+            <td >{{ form.password }}</td>
         </tr>
         </table>
 
-        <input type="submit" value="login" id = "submit" />
+        <input type="submit" value="login"  />
         <input type="hidden" name="next" value="{{ next }}" />
-    </div>
-    </form>
+     </form>
 
     
   </body>
